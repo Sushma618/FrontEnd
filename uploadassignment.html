@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Assignment</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        function redirectToDashboard() {
+            // Perform your form validation and submission here if needed
+
+            // Redirect to the teacher dashboard after submission
+            window.location.href = 'teacherdashboard.html';
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -22,7 +30,7 @@
     </nav>
     
     <section class="content">
-        <form action="upload-assignment.php" method="POST" enctype="multipart/form-data">
+        <form onsubmit="event.preventDefault(); redirectToDashboard();">
             <label for="assignment-title">Assignment Title:</label>
             <input type="text" id="assignment-title" name="title" required>
 
